@@ -1,0 +1,136 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --background-color: #f1f5f9;
+    --card-color: #ffffff;
+    --text-color: #1e293b;
+    --success-color: #dcfce7;
+    --danger-color: #fee2e2;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 92%;
+    margin: 30px auto;
+}
+
+.summary {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    flex: 1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow-wrap: anywhere;
+}
+
+.summary-card h2 {
+    font-size: 16px;
+    color: #64748b;
+}
+
+.summary-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 8px;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.student-card {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid #94a3b8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow-wrap: anywhere;
+}
+
+.student-card h3 {
+    margin-bottom: 8px;
+}
+
+.student-card p {
+    margin: 5px 0;
+}
+
+.student-card.excellent {
+    background-color: var(--success-color);
+    border-left-color: #16a34a;
+}
+
+.student-card.failed {
+    background-color: var(--danger-color);
+    border-left-color: #dc2626;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #e2e8f0;
+}
+
+
+@media (max-width: 900px) {
+    .student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+    .summary {
+        flex-direction: column;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        padding: 22px 12px;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
